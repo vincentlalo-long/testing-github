@@ -1,0 +1,40 @@
+name: "Đề xuất tính năng mới"
+description: "Dùng cho Product Backlog (Đặt sân, Giải đấu, Hệ thống...)"
+title: "[FEATURE]: <Tên tính năng ngắn gọn>"
+labels: ["enhancement", "backlog"]
+body:
+  - type: textarea
+    id: user_story
+    attributes:
+      label: "User Story"
+      description: "Mô tả tính năng dưới góc nhìn người dùng."
+      placeholder: "Ví dụ: Với tư cách là Đội trưởng, tôi muốn hệ thống tự động chia bảng đấu vòng tròn để không phải tính toán thủ công."
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: "Module liên quan"
+      options:
+        - "Booking (Lịch đặt sân, slot giờ)"
+        - "Tournament (Chia bảng, tính điểm, vòng loại)"
+        - "Finance (Thanh toán, đặt cọc, hóa đơn)"
+        - "Dashboard (Thống kê cho chủ sân)"
+        - "Core/Auth (Tài khoản, phân quyền)"
+    validations:
+      required: true
+  - type: textarea
+    id: business_logic
+    attributes:
+      label: "Logic xử lý chi tiết"
+      description: "Mô tả các ràng buộc hoặc quy trình nghiệp vụ."
+      placeholder: "Ví dụ: Sân chỉ cho phép đặt tối thiểu 60 phút. Nếu là giải đấu thì phải khóa sân đó trên hệ thống đặt lẻ."
+  - type: checkboxes
+    id: task_list
+    attributes:
+      label: "Danh sách công việc dự kiến"
+      options:
+        - label: "Thiết kế Database (Migration)"
+        - label: "Viết Business Logic (Backend)"
+        - label: "Thiết kế UI/UX (Frontend)"
+        - label: "Viết Unit Test cho logic mới"
