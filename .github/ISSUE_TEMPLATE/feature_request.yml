@@ -1,31 +1,72 @@
-name: "Đề xuất tính năng (Linh hoạt)"
-description: "Đề xuất tính năng mới cho hệ thống bóng đá"
-title: "[FEATURE]: "
-labels: ["enhancement"] # Label mặc định, bạn có thể lọc theo cái này
+name: "Feature Request (Pro Version)"
+description: "Đề xuất tính năng cho hệ thống quản lý bóng đá"
+title: "[FEATURE]: <Tên_tính_năng>"
+labels: ["enhancement"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thông tin phân hệ
+        *Vui lòng điền các thông tin cơ bản để team dễ dàng phân loại và lọc issue.*
+
   - type: input
     id: module_name
     attributes:
-      label: "Module/Phân hệ"
-      placeholder: "Ví dụ: Thanh toán, Quản lý trọng tài, API..."
-      description: "Nhập tên module bạn đang làm. Bạn có thể dùng tên này để search/filter sau này."
+      label: "Module / Phân hệ"
+      placeholder: "Ví dụ: Booking, Tournament, Auth..."
     validations:
       required: true
+
+  - type: dropdown
+    id: iteration
+    attributes:
+      label: "Iteration (Sprint)"
+      description: "Chọn giai đoạn phát triển của tính năng này."
+      options:
+        - "Iteration 1 (Tuần 1-4: Khởi tạo & Database)"
+        - "Iteration 2 (Tuần 5-8: Core Features)"
+        - "Iteration 3 (Tuần 9-12: Optimization & UI)"
+        - "Backlog (Chưa làm ngay)"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Mô tả nghiệp vụ
+
   - type: textarea
     id: user_story
     attributes:
-      label: "User Story & Mô tả"
-      placeholder: "Tôi muốn... để có thể..."
+      label: "User Story"
+      placeholder: "Với tư cách là [Vai trò], tôi muốn [Hành động] để [Giá trị]..."
     validations:
       required: true
+
   - type: textarea
     id: specs
     attributes:
-      label: "Chi tiết kỹ thuật"
-      placeholder: "Các ràng buộc logic, Database hoặc API cần thiết cho tính năng này."
+      label: "Chi tiết kỹ thuật & Logic"
+      placeholder: "Mô tả các ràng buộc (Constraints), API Endpoints hoặc thay đổi Database..."
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Phân loại & Tìm kiếm nhanh
+
   - type: input
     id: filter_tag
     attributes:
-      label: "Custom Tags (Để Filter)"
-      placeholder: "Ví dụ: #frontend, #sprint-1, #urgent"
-      description: "Bạn có thể nhập các tag riêng ở đây để dễ dàng lọc trong thanh search của GitHub."
+      label: "Custom Tags"
+      placeholder: "Ví dụ: #frontend, #api-heavy, #urgent"
+      description: "Dùng các hashtag để bạn có thể dùng thanh search của GitHub filter phát ra luôn."
+
+  - type: checkboxes
+    id: priority
+    attributes:
+      label: "Ưu tiên"
+      options:
+        - label: "Đây là tính năng quan trọng (High Priority)"
+        - label: "Cần Review bởi cả team (Phong, Linh)"
