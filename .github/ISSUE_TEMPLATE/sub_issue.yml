@@ -1,0 +1,40 @@
+name:  "Sub-Issue / Task"
+description: "Chia nhỏ các tính năng lớn thành các task cụ thể"
+title: "[TASK]: "
+labels: ["task"]
+body:
+  - type: input
+    id: parent_issue
+    attributes:
+      label: "Thuộc Feature/Issue lớn nào?"
+      placeholder: "Nhập số Issue (ví dụ: #12) hoặc tên Feature"
+    validations:
+      required: true
+  - type: input
+    id: task_module
+    attributes:
+      label: "Module"
+      placeholder: "Ví dụ: UI/UX, Database, Integration..."
+  - type: textarea
+    id: task_content
+    attributes:
+      label: "Nội dung công việc cụ thể"
+      placeholder: "Cần code những gì, sửa file nào..."
+    validations:
+      required: true
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: "Độ phức tạp"
+      options:
+        - "Easy (Làm trong buổi)"
+        - "Medium (1-2 ngày)"
+        - "Hard (Cần thảo luận team)"
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: "Trạng thái hoàn thành"
+      options:
+        - label: "Đã xong code"
+        - label: "Đã tự test (Local)"
+        - label: "Đã đẩy Pull Request"
