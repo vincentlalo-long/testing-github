@@ -1,72 +1,52 @@
-name: "Feature Request (Pro Version)"
-description: "Đề xuất tính năng cho hệ thống quản lý bóng đá"
-title: "[FEATURE]: <Tên_tính_năng>"
-labels: ["enhancement"]
+name: "🚀 Feature Request"
+description: "Đề xuất tính năng mới cho dự án Quản lý bóng đá"
+title: "[FEATURE]: "
+labels: ["enhancement"] # Chỉ để nhãn chung, nhãn chi tiết sẽ chọn tay sau khi tạo
 body:
   - type: markdown
     attributes:
       value: |
-        ## Thông tin phân hệ
-        *Vui lòng điền các thông tin cơ bản để team dễ dàng phân loại và lọc issue.*
-
-  - type: input
-    id: module_name
-    attributes:
-      label: "Module / Phân hệ"
-      placeholder: "Ví dụ: Booking, Tournament, Auth..."
-    validations:
-      required: true
-
+        ## 📌 Phân loại nhanh
+        *Chọn thông tin bên dưới để team dễ dàng quản lý.*
+  
   - type: dropdown
-    id: iteration
+    id: iteration_choice
     attributes:
-      label: "Iteration (Sprint)"
-      description: "Chọn giai đoạn phát triển của tính năng này."
+      label: "⏳ Iteration / Sprint"
+      description: "Tính năng này thuộc giai đoạn nào?"
       options:
-        - "Iteration 1 (Tuần 1-4: Khởi tạo & Database)"
-        - "Iteration 2 (Tuần 5-8: Core Features)"
-        - "Iteration 3 (Tuần 9-12: Optimization & UI)"
-        - "Backlog (Chưa làm ngay)"
+        - "Iteration 1 (Tuần 1-4)"
+        - "Iteration 2 (Tuần 5-8)"
+        - "Iteration 3 (Tuần 9-12)"
+        - "Backlog"
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## Mô tả nghiệp vụ
-
-  - type: textarea
-    id: user_story
-    attributes:
-      label: "User Story"
-      placeholder: "Với tư cách là [Vai trò], tôi muốn [Hành động] để [Giá trị]..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: specs
-    attributes:
-      label: "Chi tiết kỹ thuật & Logic"
-      placeholder: "Mô tả các ràng buộc (Constraints), API Endpoints hoặc thay đổi Database..."
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## Phân loại & Tìm kiếm nhanh
-
-  - type: input
-    id: filter_tag
-    attributes:
-      label: "Custom Tags"
-      placeholder: "Ví dụ: #frontend, #api-heavy, #urgent"
-      description: "Dùng các hashtag để bạn có thể dùng thanh search của GitHub filter phát ra luôn."
 
   - type: checkboxes
-    id: priority
+    id: modules
     attributes:
-      label: "Ưu tiên"
+      label: "🧩 Module liên quan"
+      description: "Tích chọn module để team gán Label tương ứng."
       options:
-        - label: "Đây là tính năng quan trọng (High Priority)"
-        - label: "Cần Review bởi cả team (Phong, Linh)"
+        - label: "Quản lý Đặt sân (Booking)"
+        - label: "Quản lý Giải đấu (Tournament)"
+        - label: "Hệ thống & Phân quyền (Auth)"
+        - label: "Thanh toán & Hóa đơn (Payment)"
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "💡 Mô tả tính năng"
+      placeholder: "Mô tả chi tiết logic hoặc giao diện mong muốn..."
+    validations:
+      required: true
+
+  - type: input
+    id: reference_link
+    attributes:
+      label: "🔗 Link tham khảo"
+      placeholder: "Link Figma, tài liệu thiết kế hoặc issue liên quan..."
